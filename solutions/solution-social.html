@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution Réseaux Sociaux | Dynovate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles spécifiques à la page de détail */
+        .solution-hero {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .social-user {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .social-avatar {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-gray);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+        }
+        
+        .social-avatar i {
+            color: var(--dark-gray);
+        }
+        
+        .social-info {
+            flex: 1;
+        }
+        
+        .social-name {
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        
+        .social-handle {
+            font-size: 0.8rem;
+            color: var(--dark-gray);
+        }
+        
+        .social-text {
+            margin-bottom: 15px;
+        }
+        
+        .social-interaction {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+        
+        .social-response {
+            background-color: var(--light-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .social-response-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .social-bot-avatar {
+            width: 30px;
+            height: 30px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+        }
+        
+        .social-bot-avatar i {
+            color: white;
+            font-size: 0.8rem;
+        }
+        
+        .social-bot-name {
+            font-weight: 600;
+        }
+        
+        .social-actions {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            border-top: 1px solid var(--medium-gray);
+        }
+        
+        .social-stats {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-stat-value {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+        }
+        
+        .social-stat-label {
+            font-size: 0.8rem;
+            color: var(--dark-gray);
+        }
+        
+        .social-action-btn {
+            padding: 8px 15px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .solutions-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 80px;
+            gap: 20px;
+        }
+        
+        .solution-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            background-color: white;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            width: 200px;
+            text-align: center;
+        }
+        
+        .solution-nav-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .solution-nav-item i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        
+        .solution-nav-item h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 991px) {
+            .solution-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .solution-content {
+                margin-bottom: 50px;
+            }
+            
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .detail-content h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .detail-content {
+                text-align: center;
+            }
+            
+            .feature-box h3 {
+                justify-content: center;
+            }
+            
+            .solutions-nav {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <svg width="40" height="40" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" fill="black"/>
+                    <path d="M50,25 C53,30 56,32 59,38 C55,40 50,50 50,55 C50,60 45,40 41,38 C44,32 47,30 50,25" fill="white">
+                    </path>
+                </svg>
+                <span>Dynovate</span>
+            </a>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li class="dropdown">
+                    <a href="solutions.html" class="active">Nos Solutions</a>
+                    <div class="dropdown-content">
+                        <a href="solution-mail.html">Réponse par Mail</a>
+                        <a href="solution-social.html" class="active">Réseaux Sociaux</a>
+                        <a href="solution-phone.html">Réponse Téléphonique</a>
+                        <a href="solution-chatbot.html">Chatbot Web</a>
+                    </div>
+                </li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" class="btn-primary">Démonstration</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="solution-hero">
+        <div class="solution-container">
+            <div class="solution-content">
+                <h1 class="animated-title">Solution <span class="highlight">Réseaux Sociaux</span></h1>
+                <p class="hero-description">Maintenez une présence active et réactive sur tous vos réseaux sociaux grâce à notre IA qui interagit avec votre audience comme un véritable Community Manager.</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn-primary">Demander une démo</a>
+                    <a href="#details" class="btn-secondary">En savoir plus</a>
+                </div>
+            </div>
+            <div class="solution-icon">
+                <i class="fas fa-share-alt"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Details -->
+    <section id="details" class="solution-detail">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-content">
+                    <h2>Community Management Intelligent</h2>
+                    <p class="detail-text">Notre solution pour les réseaux sociaux permet à votre entreprise de maintenir une interaction constante et personnalisée avec votre audience, sans nécessiter une équipe dédiée 24/7. L'IA Dynovate répond aux questions, commentaires et messages comme un vrai Community Manager.</p>
+                    
+                    <div class="feature-box">
+                        <h3><i class="fas fa-comments"></i>Réponses personnalisées</h3>
+                        <p>Notre IA analyse le ton, le contexte et l'historique des conversations pour fournir des réponses naturelles et adaptées qui respectent parfaitement l'identité de votre marque.</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h3><i class="fas fa-globe"></i>Gestion multiplateforme</h3>
+                        <p>Une solution unique pour gérer tous vos réseaux sociaux : Twitter, Instagram, Facebook, LinkedIn, etc. Centralisez vos interactions et maintenez une cohérence dans votre communication.</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h3><i class="fas fa-chart-pie"></i>Analyses et insights</h3>
+                        <p>Obtenez des rapports détaillés sur l'engagement de votre audience, les sujets tendances, les sentiments exprimés et des recommandations pour optimiser votre stratégie sociale.</p>
+                    </div>
+                </div>
+                
+                <div class="detail-image">
+                    <div class="social-demo">
+                        <div class="social-header">
+                            <div class="social-platform">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </div>
+                            <div class="social-username">@VotreEntreprise</div>
+                        </div>
+                        <div class="social-content">
+                            <div class="social-post">
+                                <div class="social-user">
+                                    <div class="social-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="social-info">
+                                        <div class="social-name">Jean Dupont</div>
+                                        <div class="social-handle">@jean_dupont</div>
+                                    </div>
+                                </div>
+                                <div class="social-text">
+                                    <p>@VotreEntreprise Est-ce que votre évènement du 15 juin sera accessible aux personnes à mobilité réduite ? #accessibilité</p>
+                                </div>
+                                <div class="social-interaction">
+                                    <span>Il y a 5 minutes</span>
+                                    <span><i class="far fa-heart"></i> 3</span>
+                                </div>
+                            </div>
+                            
+                            <div class="social-response">
+                                <div class="social-response-header">
+                                    <div class="social-bot-avatar">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <div class="social-bot-name">Dynovate IA</div>
+                                </div>
+                                <div class="social-text">
+                                    <p>Suggestion de réponse :</p>
+                                    <p>"Bonjour @jean_dupont ! Oui, notre événement du 15 juin est entièrement accessible aux personnes à mobilité réduite. Nous avons prévu des rampes d'accès, des places réservées et des sanitaires adaptés. N'hésitez pas si vous avez d'autres questions ! #inclusivité"</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="social-actions">
+                            <div class="social-stats">
+                                <div class="social-stat">
+                                    <div class="social-stat-value">97%</div>
+                                    <div class="social-stat-label">Précision</div>
+                                </div>
+                                <div class="social-stat">
+                                    <div class="social-stat-value">3min</div>
+                                    <div class="social-stat-label">Temps moyen</div>
+                                </div>
+                            </div>
+                            <button class="social-action-btn"><i class="fas fa-paper-plane"></i> Publier</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="solutions-nav">
+                <a href="solution-mail.html" class="solution-nav-item">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Réponse par Mail</h4>
+                    <p>Gestion intelligente des emails</p>
+                </a>
+                <a href="solution-social.html" class="solution-nav-item" style="background-color: var(--accent-color); color: white;">
+                    <i class="fas fa-share-alt" style="color: white;"></i>
+                    <h4>Réseaux Sociaux</h4>
+                    <p>Community management IA</p>
+                </a>
+                <a href="solution-phone.html" class="solution-nav-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <h4>Réponse Téléphonique</h4>
+                    <p>Service client 24/7</p>
+                </a>
+                <a href="solution-chatbot.html" class="solution-nav-item">
+                    <i class="fas fa-robot"></i>
+                    <h4>Chatbot Web</h4>
+                    <p>Recherche intelligente</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-container">
+                <h2>Prêt à transformer votre présence sur les réseaux sociaux ?</h2>
+                <p>Demandez une démonstration personnalisée de notre solution Réseaux Sociaux.</p>
+                <a href="contact.html" class="btn-primary">Demander une démo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg width="50" height="50" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" fill="white"/>
+                        <path d="M50,25 C53,30 56,32 59,38 C55,40 50,50 50,55 C50,60 45,40 41,38 C44,32 47,30 50,25" fill="black">
+                        </path>
+                    </svg>
+                    <h3>Dynovate</h3>
+                    <p>When Dynovate code, the future evolves</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="solutions.html">Nos Solutions</a></li>
+                            <li><a href="about.html">À propos</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="solution-mail.html">Réponse par Mail</a></li>
+                            <li><a href="solution-social.html">Réseaux Sociaux</a></li>
+                            <li><a href="solution-phone.html">Réponse Téléphonique</a></li>
+                            <li><a href="solution-chatbot.html">Chatbot Web</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> Marseille, France</li>
+                            <li><i class="fas fa-envelope"></i> contact@dynovate.com</li>
+                            <li><i class="fas fa-phone"></i> +33 6 12 34 56 78</li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Suivez-nous</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dynovate. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-toggle">
+            <i class="fas fa-comment"></i>
+        </div>
+        <div class="chatbot-window" style="display: none;">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <svg width="20" height="20" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" fill="white"/>
+                        <path d="M50,25 C53,30 56,32 59,38 C55,40 50,50 50,55 C50,60 45,40 41,38 C44,32 47,30 50,25" fill="black">
+                        </path>
+                    </svg>
+                    <span>Dynovate Assistant</span>
+                </div>
+                <div class="chatbot-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="chatbot-messages">
+                <div class="message bot">
+                    <div class="message-content">Bonjour ! Je suis l'assistant Dynovate. Comment puis-je vous aider concernant notre solution pour les réseaux sociaux ?</div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" placeholder="Posez votre question...">
+                <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

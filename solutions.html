@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Solutions | Dynovate</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles spécifiques à la page Solutions */
+        .solutions-hero {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 150px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .solutions-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(91, 33, 182, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        
+        .solutions-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .solution-details {
+            padding: 100px 0;
+        }
+        
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            margin-top: 70px;
+        }
+        
+        .solution-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .solution-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .solution-image {
+            height: 200px;
+            background-color: var(--light-gray);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .solution-image i {
+            font-size: 4rem;
+            color: var(--accent-color);
+        }
+        
+        .solution-info {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .solution-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .solution-info p {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+        
+        .features-list {
+            margin-bottom: 25px;
+        }
+        
+        .features-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .features-list li i {
+            color: var(--accent-color);
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 991px) {
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <svg width="40" height="40" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" fill="black"/>
+                    <path d="M50,25 C53,30 56,32 59,38 C55,40 50,50 50,55 C50,60 45,40 41,38 C44,32 47,30 50,25" fill="white">
+                    </path>
+                </svg>
+                <span>Dynovate</span>
+            </a>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li class="dropdown">
+                    <a href="solutions.html" class="active">Nos Solutions</a>
+                    <div class="dropdown-content">
+                        <a href="solution-mail.html">Réponse par Mail</a>
+                        <a href="solution-social.html">Réseaux Sociaux</a>
+                        <a href="solution-phone.html">Réponse Téléphonique</a>
+                        <a href="solution-chatbot.html">Chatbot Web</a>
+                    </div>
+                </li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" class="btn-primary">Démonstration</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="solutions-hero">
+        <div class="container">
+            <div class="solutions-content">
+                <h1 class="animated-title">Nos Solutions <span class="highlight">Innovantes</span></h1>
+                <p class="hero-description">Découvrez comment notre technologie d'intelligence artificielle peut transformer vos communications d'entreprise et optimiser vos interactions avec vos clients.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Details -->
+    <section class="solution-details">
+        <div class="container">
+            <div class="section-header">
+                <h2>Des Solutions Adaptées à Vos Besoins</h2>
+                <p>Notre gamme de services IA est conçue pour simplifier et optimiser toutes vos communications</p>
+            </div>
+
+            <div class="solution-grid">
+                <div class="solution-item">
+                    <div class="solution-image">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="solution-info">
+                        <h3>Réponse par Mail</h3>
+                        <p>Notre IA peut répondre automatiquement aux mails de certaines catégories, classer les mails selon leur nature, et vous aider à gérer votre boîte de réception de manière plus efficace.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check-circle"></i> Classification intelligente des emails</li>
+                            <li><i class="fas fa-check-circle"></i> Réponses automatiques personnalisées</li>
+                            <li><i class="fas fa-check-circle"></i> Priorisation des messages importants</li>
+                        </ul>
+                        <a href="solution-mail.html" class="btn-primary">Découvrir cette solution</a>
+                    </div>
+                </div>
+
+                <div class="solution-item">
+                    <div class="solution-image">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <div class="solution-info">
+                        <h3>Réseaux Sociaux</h3>
+                        <p>Pour les entreprises ayant une communication sur les réseaux sociaux, notre IA peut répondre aux questions des abonnés, maintenir une interaction constante et rapide avec votre audience.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check-circle"></i> Réponses instantanées aux commentaires</li>
+                            <li><i class="fas fa-check-circle"></i> Gestion multiplateforme (Twitter, Instagram, etc.)</li>
+                            <li><i class="fas fa-check-circle"></i> Tone of voice personnalisé à votre marque</li>
+                        </ul>
+                        <a href="solution-social.html" class="btn-primary">Découvrir cette solution</a>
+                    </div>
+                </div>
+
+                <div class="solution-item">
+                    <div class="solution-image">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="solution-info">
+                        <h3>Réponse Téléphonique</h3>
+                        <p>Notre IA peut répondre aux appels téléphoniques, fournir des renseignements et prendre des rendez-vous, offrant une expérience client fluide et professionnelle disponible 24/7.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check-circle"></i> Disponibilité 24h/24 et 7j/7</li>
+                            <li><i class="fas fa-check-circle"></i> Prise de rendez-vous automatisée</li>
+                            <li><i class="fas fa-check-circle"></i> Transfert intelligent vers un conseiller si nécessaire</li>
+                        </ul>
+                        <a href="solution-phone.html" class="btn-primary">Découvrir cette solution</a>
+                    </div>
+                </div>
+
+                <div class="solution-item">
+                    <div class="solution-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="solution-info">
+                        <h3>Chatbot Web</h3>
+                        <p>Votre site internet comportera une barre de recherche boostée à l'IA, permettant de dynamiser l'échange entre votre site et le client avec une compréhension avancée des requêtes complexes.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check-circle"></i> Compréhension du langage naturel</li>
+                            <li><i class="fas fa-check-circle"></i> Recherche produit intelligente</li>
+                            <li><i class="fas fa-check-circle"></i> Interface conversationnelle humanisée</li>
+                        </ul>
+                        <a href="solution-chatbot.html" class="btn-primary">Découvrir cette solution</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-container">
+                <h2>Prêt à révolutionner vos communications ?</h2>
+                <p>Prenez rendez-vous pour une démonstration personnalisée de nos solutions.</p>
+                <a href="contact.html" class="btn-primary">Demander une démo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg width="50" height="50" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" fill="white"/>
+                        <path d="M50,25 C53,30 56,32 59,38 C55,40 50,50 50,55 C50,60 45,40 41,38 C44,32 47,30 50,25" fill="black">
+                        </path>
+                    </svg>
+                    <h3>Dynovate</h3>
+                    <p>When Dynovate codes, the future evolves</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="solutions.html">Nos Solutions</a></li>
+                            <li><a href="about.html">À propos</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="solution-mail.html">Réponse par Mail</a></li>
+                            <li><a href="solution-social.html">Réseaux Sociaux</a></li>
+                            <li><a href="solution-phone.html">Réponse Téléphonique</a></li>
+                            <li><a href="solution-chatbot.html">Chatbot Web</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> Marseille, France</li>
+                            <li><i class="fas fa-envelope"></i> contact@dynovate.com</li>
+                            <li><i class="fas fa-phone"></i> +33 6 64 66 45 06</li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Suivez-nous</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dynovate. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-toggle">
+            <i class="fas fa-comment"></i>
+        </div>
+        <div class="chatbot-window" style="display: none;">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <svg width="20" height="20" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" fill="white"/>
+                        <path d="M50,25 C53,30 56,32 59,38 C55,40 50,50 50,55 C50,60 45,40 41,38 C44,32 47,30 50,25" fill="black">
+                        </path>
+                    </svg>
+                    <span>Dynovate Assistant</span>
+                </div>
+                <div class="chatbot-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="chatbot-messages">
+                <div class="message bot">
+                    <div class="message-content">Bonjour ! Je suis l'assistant Dynovate. Comment puis-je vous aider concernant nos solutions ?</div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" placeholder="Posez votre question...">
+                <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

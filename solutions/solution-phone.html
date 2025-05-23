@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution Réponse Téléphonique | Dynovate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles spécifiques à la page de détail */
+        .solution-hero {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .solution-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 50%, rgba(91, 33, 182, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        
+        .solution-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .solution-content {
+            flex: 1;
+            max-width: 600px;
+        }
+        
+        .solution-icon {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .solution-icon i {
+            font-size: 8rem;
+            color: var(--secondary-color);
+            opacity: 0.8;
+        }
+        
+        .solution-detail {
+            padding: 100px 0;
+        }
+        
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 70px;
+        }
+        
+        .detail-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .detail-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .detail-text {
+            margin-bottom: 30px;
+            color: var(--dark-gray);
+        }
+        
+        .feature-box {
+            background-color: var(--light-gray);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .feature-box h3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .feature-box h3 i {
+            color: var(--accent-color);
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .detail-image {
+            position: relative;
+        }
+        
+        .image-wrapper {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .phone-demo {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .phone-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .phone-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .phone-title i {
+            margin-right: 10px;
+        }
+        
+        .phone-subtitle {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+        
+        .phone-call {
+            padding: 25px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .call-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .call-status-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+        }
+        
+        .call-status-icon i {
+            font-size: 2rem;
+        }
+        
+        .call-status-text {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .call-info {
+            background-color: var(--light-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .call-info-item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .call-info-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .call-info-label {
+            font-weight: 600;
+            width: 120px;
+            color: var(--primary-color);
+        }
+        
+        .call-transcript {
+            background-color: var(--light-gray);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .transcript-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .transcript-text {
+            line-height: 1.5;
+        }
+        
+        .transcript-line {
+            margin-bottom: 8px;
+        }
+        
+        .transcript-speaker {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+        
+        .phone-actions {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 25px;
+        }
+        
+        .phone-action-btn {
+            padding: 10px 15px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .phone-stats {
+            padding: 20px;
+            background-color: var(--light-gray);
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .phone-stat {
+            text-align: center;
+        }
+        
+        .phone-stat-value {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+        }
+        
+        .phone-stat-label {
+            font-size: 0.8rem;
+            color: var(--dark-gray);
+        }
+        
+        .solutions-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 80px;
+            gap: 20px;
+        }
+        
+        .solution-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            background-color: white;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            width: 200px;
+            text-align: center;
+        }
+        
+        .solution-nav-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .solution-nav-item i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        
+        .solution-nav-item h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 991px) {
+            .solution-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .solution-content {
+                margin-bottom: 50px;
+            }
+            
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .detail-content h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .detail-content {
+                text-align: center;
+            }
+            
+            .feature-box h3 {
+                justify-content: center;
+            }
+            
+            .solutions-nav {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <svg width="40" height="40" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" fill="black"/>
+                    <path d="M50,25 C53,30 56,32 59,38 C55,40 50,50 50,55 C50,60 45,40 41,38 C44,32 47,30 50,25" fill="white">
+                    </path>
+                </svg>
+                <span>Dynovate</span>
+            </a>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li class="dropdown">
+                    <a href="solutions.html" class="active">Nos Solutions</a>
+                    <div class="dropdown-content">
+                        <a href="solution-mail.html">Réponse par Mail</a>
+                        <a href="solution-social.html">Réseaux Sociaux</a>
+                        <a href="solution-phone.html" class="active">Réponse Téléphonique</a>
+                        <a href="solution-chatbot.html">Chatbot Web</a>
+                    </div>
+                </li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#" class="btn-primary">Démonstration</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="solution-hero">
+        <div class="solution-container">
+            <div class="solution-content">
+                <h1 class="animated-title">Solution <span class="highlight">Réponse Téléphonique</span></h1>
+                <p class="hero-description">Offrez un service client téléphonique disponible 24/7 grâce à notre IA qui répond aux appels, fournit des informations et prend des rendez-vous avec une qualité proche de l'humain.</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn-primary">Demander une démo</a>
+                    <a href="#details" class="btn-secondary">En savoir plus</a>
+                </div>
+            </div>
+            <div class="solution-icon">
+                <i class="fas fa-phone-alt"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Details -->
+    <section id="details" class="solution-detail">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-content">
+                    <h2>Service téléphonique intelligent</h2>
+                    <p class="detail-text">Notre solution de Réponse Téléphonique permet à votre entreprise d'offrir un service client de qualité à toute heure, sans les coûts associés à une équipe disponible 24/7. L'IA Dynovate répond aux appels avec une voix naturelle et peut gérer la plupart des demandes courantes.</p>
+                    
+                    <div class="feature-box">
+                        <h3><i class="fas fa-clock"></i>Disponibilité permanente</h3>
+                        <p>Notre IA répond à tous les appels, 24 heures sur 24 et 7 jours sur 7, sans temps d'attente. Vos clients obtiennent toujours une réponse, même en dehors des heures de bureau ou pendant les pics d'appels.</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h3><i class="fas fa-calendar-alt"></i>Prise de rendez-vous</h3>
+                        <p>L'IA peut accéder à votre calendrier pour proposer des créneaux disponibles et confirmer des rendez-vous en temps réel, offrant ainsi un service complet sans intervention humaine.</p>
+                    </div>
+                    
+                    <div class="feature-box">
+                        <h3><i class="fas fa-exchange-alt"></i>Transfert intelligent</h3>
+                        <p>Pour les demandes complexes, l'IA transfère l'appel vers la personne compétente après avoir recueilli les informations essentielles, optimisant ainsi le temps de vos équipes.</p>
+                    </div>
+                </div>
+                
+                <div class="detail-image">
+                    <div class="phone-demo">
+                        <div class="phone-header">
+                            <div class="phone-title">
+                                <i class="fas fa-headset"></i>
+                                <span>Assistant Téléphonique Dynovate</span>
+                            </div>
+                            <div class="phone-subtitle">Gestion intelligente des appels</div>
+                        </div>
+                        <div class="phone-call">
+                            <div class="call-status">
+                                <div class="call-status-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="call-status-text">Appel en cours - 2:45</div>
+                            </div>
+                            
+                            <div class="call-info">
+                                <div class="call-info-item">
+                                    <div class="call-info-label">Appelant :</div>
+                                    <div>Marie Dubois</div>
+                                </div>
+                                <div class="call-info-item">
+                                    <div class="call-info-label">Numéro :</div>
+                                    <div>+33 6 12 34 56 78</div>
+                                </div>
+                                <div class="call-info-item">
+                                    <div class="call-info-label">Motif détecté :</div>
+                                    <div>Prise de rendez-vous</div>
+                                </div>
+                            </div>
+                            
+                            <div class="call-transcript">
+                                <div class="transcript-title">Transcription en direct</div>
+                                <div class="transcript-text">
+                                    <div class="transcript-line"><span class="transcript-speaker">Assistant :</span> Bonjour et bienvenue chez [Votre Entreprise]. Je suis l'assistant virtuel Dynovate. Comment puis-je vous aider aujourd'hui ?</div>
+                                    <div class="transcript-line"><span class="transcript-speaker">Appelant :</span> Bonjour, j'aimerais prendre rendez-vous avec Dr. Martin pour la semaine prochaine.</div>
+                                    <div class="transcript-line"><span class="transcript-speaker">Assistant :</span> Je serais ravi de vous aider à prendre rendez-vous avec Dr. Martin. Puis-je avoir votre nom, s'il vous plaît ?</div>
+                                    <div class="transcript-line"><span class="transcript-speaker">Appelant :</span> Marie Dubois.</div>
+                                    <div class="transcript-line"><span class="transcript-speaker">Assistant :</span> Merci, Mme Dubois. Dr. Martin a des disponibilités mardi 14 à 10h ou jeudi 16 à 15h. Quelle date vous conviendrait le mieux ?</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="phone-actions">
+                            <button class="phone-action-btn"><i class="fas fa-user"></i> Transférer</button>
+                            <button class="phone-action-btn"><i class="fas fa-calendar-check"></i> Confirmer RDV</button>
+                        </div>
+                        
+                        <div class="phone-stats">
+                            <div class="phone-stat">
+                                <div class="phone-stat-value">98%</div>
+                                <div class="phone-stat-label">Précision</div>
+                            </div>
+                            <div class="phone-stat">
+                                <div class="phone-stat-value">-60%</div>
+                                <div class="phone-stat-label">Temps d'attente</div>
+                            </div>
+                            <div class="phone-stat">
+                                <div class="phone-stat-value">24/7</div>
+                                <div class="phone-stat-label">Disponibilité</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="solutions-nav">
+                <a href="solution-mail.html" class="solution-nav-item">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Réponse par Mail</h4>
+                    <p>Gestion intelligente des emails</p>
+                </a>
+                <a href="solution-social.html" class="solution-nav-item">
+                    <i class="fas fa-share-alt"></i>
+                    <h4>Réseaux Sociaux</h4>
+                    <p>Community management IA</p>
+                </a>
+                <a href="solution-phone.html" class="solution-nav-item" style="background-color: var(--accent-color); color: white;">
+                    <i class="fas fa-phone-alt" style="color: white;"></i>
+                    <h4>Réponse Téléphonique</h4>
+                    <p>Service client 24/7</p>
+                </a>
+                <a href="solution-chatbot.html" class="solution-nav-item">
+                    <i class="fas fa-robot"></i>
+                    <h4>Chatbot Web</h4>
+                    <p>Recherche intelligente</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-container">
+                <h2>Prêt à transformer votre service téléphonique ?</h2>
+                <p>Demandez une démonstration personnalisée de notre solution Réponse Téléphonique.</p>
+                <a href="contact.html" class="btn-primary">Demander une démo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg width="50" height="50" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" fill="white"/>
+                        <path d="M50,25 C53,30 56,32 59,38 C55,40 50,50 50,55 C50,60 45,40 41,38 C44,32 47,30 50,25" fill="black">
+                        </path>
+                    </svg>
+                    <h3>Dynovate</h3>
+                    <p>When Dynovate code, the future evolves</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="solutions.html">Nos Solutions</a></li>
+                            <li><a href="about.html">À propos</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="solution-mail.html">Réponse par Mail</a></li>
+                            <li><a href="solution-social.html">Réseaux Sociaux</a></li>
+                            <li><a href="solution-phone.html">Réponse Téléphonique</a></li>
+                            <li><a href="solution-chatbot.html">Chatbot Web</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> Marseille, France</li>
+                            <li><i class="fas fa-envelope"></i> contact@dynovate.com</li>
+                            <li><i class="fas fa-phone"></i> +33 6 12 34 56 78</li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Suivez-nous</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dynovate. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-toggle">
+            <i class="fas fa-comment"></i>
+        </div>
+        <div class="chatbot-window" style="display: none;">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <svg width="20" height="20" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" fill="white"/>
+                        <path d="M50,25 C53,30 56,32 59,38 C55,40 50,50 50,55 C50,60 45,40 41,38 C44,32 47,30 50,25" fill="black">
+                        </path>
+                    </svg>
+                    <span>Dynovate Assistant</span>
+                </div>
+                <div class="chatbot-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="chatbot-messages">
+                <div class="message bot">
+                    <div class="message-content">Bonjour ! Je suis l'assistant Dynovate. Comment puis-je vous aider concernant notre solution de Réponse Téléphonique ?</div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" placeholder="Posez votre question...">
+                <button class="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
