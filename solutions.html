@@ -4,48 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nos Solutions | Dynovate</title>
-<link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Styles spécifiques à la page Solutions */
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #ffffff;
+            --accent-color: #5b21b6;
+            --text-color: #333333;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #666666;
+            --transition: all 0.3s ease;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --border-radius: 10px;
+        }
+        
+        /* Hero Section */
         .solutions-hero {
             background-color: var(--primary-color);
+            background-image: radial-gradient(circle at 30% 50%, rgba(91, 33, 182, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
             color: var(--secondary-color);
             padding: 150px 0 80px;
             position: relative;
             overflow: hidden;
         }
         
-        .solutions-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 30% 50%, rgba(91, 33, 182, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
-        }
-        
         .solutions-content {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
             text-align: center;
             position: relative;
             z-index: 1;
+            padding: 0 20px;
         }
         
+        .animated-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s forwards;
+        }
+        
+        .highlight {
+            color: var(--accent-color);
+            position: relative;
+        }
+        
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(91, 33, 182, 0.3);
+            z-index: -1;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ccc;
+            line-height: 1.6;
+        }
+        
+        /* Solutions Section */
         .solution-details {
             padding: 100px 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
         
         .solution-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 50px;
-            margin-top: 70px;
+            gap: 40px;
+            margin-top: 30px;
         }
         
         .solution-item {
@@ -56,10 +130,11 @@
             transition: var(--transition);
             display: flex;
             flex-direction: column;
+            border: 1px solid var(--medium-gray);
         }
         
         .solution-item:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
         
@@ -69,12 +144,26 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
             overflow: hidden;
         }
         
+        .solution-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(91, 33, 182, 0.1) 0%, rgba(91, 33, 182, 0.3) 100%);
+            z-index: 1;
+        }
+        
         .solution-image i {
-            font-size: 4rem;
+            font-size: 5rem;
             color: var(--accent-color);
+            z-index: 2;
+            filter: drop-shadow(0 5px 15px rgba(91, 33, 182, 0.3));
         }
         
         .solution-info {
@@ -87,12 +176,26 @@
         .solution-info h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .solution-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
         }
         
         .solution-info p {
             color: var(--dark-gray);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             flex: 1;
+            line-height: 1.6;
         }
         
         .features-list {
@@ -101,18 +204,90 @@
         
         .features-list li {
             display: flex;
-            align-items: center;
-            margin-bottom: 10px;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            color: var(--dark-gray);
         }
         
         .features-list li i {
             color: var(--accent-color);
             margin-right: 10px;
+            margin-top: 3px;
         }
         
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: var(--transition);
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(91, 33, 182, 0.3);
+        }
+        
+        /* CTA Section */
+        .cta {
+            background-color: var(--primary-color);
+            background-image: radial-gradient(circle at 70% 50%, rgba(91, 33, 182, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+            color: var(--secondary-color);
+            padding: 100px 0;
+        }
+        
+        .cta-container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            color: #ccc;
+            line-height: 1.6;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
         @media (max-width: 991px) {
             .solution-grid {
                 grid-template-columns: 1fr;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .animated-title {
+                font-size: 2.3rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -147,18 +322,16 @@
                 </li>
                 <li><a href="about.html">À propos</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="#" class="btn-primary">Démonstration</a></li>
+                <li><a href="contact.html" class="btn-primary">Démonstration</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="solutions-hero">
-        <div class="container">
-            <div class="solutions-content">
-                <h1 class="animated-title">Nos Solutions <span class="highlight">Innovantes</span></h1>
-                <p class="hero-description">Découvrez comment notre technologie d'intelligence artificielle peut transformer vos communications d'entreprise et optimiser vos interactions avec vos clients.</p>
-            </div>
+        <div class="solutions-content">
+            <h1 class="animated-title">Nos Solutions <span class="highlight">Innovantes</span></h1>
+            <p class="hero-description">Découvrez comment notre technologie d'intelligence artificielle peut transformer vos communications d'entreprise et optimiser vos interactions avec vos clients.</p>
         </div>
     </section>
 
@@ -167,7 +340,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Des Solutions Adaptées à Vos Besoins</h2>
-                <p>Notre gamme de services IA est conçue pour simplifier et optimiser toutes vos communications</p>
+                <p>Notre gamme de services IA est conçue pour simplifier et optimiser toutes vos communications, vous permettant de vous concentrer sur votre cœur de métier.</p>
             </div>
 
             <div class="solution-grid">
@@ -240,12 +413,10 @@
 
     <!-- Call to Action -->
     <section class="cta">
-        <div class="container">
-            <div class="cta-container">
-                <h2>Prêt à révolutionner vos communications ?</h2>
-                <p>Prenez rendez-vous pour une démonstration personnalisée de nos solutions.</p>
-                <a href="contact.html" class="btn-primary">Demander une démo</a>
-            </div>
+        <div class="cta-container">
+            <h2>Prêt à révolutionner vos communications ?</h2>
+            <p>Prenez rendez-vous pour une démonstration personnalisée de nos solutions et découvrez comment Dynovate peut transformer votre entreprise.</p>
+            <a href="contact.html" class="btn-primary">Demander une démo</a>
         </div>
     </section>
 
@@ -286,7 +457,7 @@
                         <ul class="contact-info">
                             <li><i class="fas fa-map-marker-alt"></i> Marseille, France</li>
                             <li><i class="fas fa-envelope"></i> contact@dynovate.com</li>
-                            <li><i class="fas fa-phone"></i> +33 6 64 66 45 06</li>
+                            <li><i class="fas fa-phone"></i> +33 6 12 34 56 78</li>
                         </ul>
                     </div>
                     <div class="footer-column">

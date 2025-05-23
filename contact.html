@@ -9,241 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Styles spécifiques à la page contact */
-        .contact-hero {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 150px 0 80px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .contact-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 70% 50%, rgba(91, 33, 182, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
-        }
-        
-        .contact-content {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .contact-section {
-            padding: 100px 0;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 50px;
-            margin-top: 50px;
-        }
-        
-        .contact-info {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            border-radius: var(--border-radius);
-            padding: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .contact-info::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(91, 33, 182, 0.6) 0%, rgba(0, 0, 0, 0) 70%);
-            border-radius: 0 0 0 100%;
-        }
-        
-        .contact-info-header {
-            margin-bottom: 30px;
-        }
-        
-        .contact-info-header h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-        
-        .contact-info-list {
-            margin-bottom: 40px;
-        }
-        
-        .contact-info-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-        }
-        
-        .contact-info-item i {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            margin-right: 15px;
-            width: 30px;
-            text-align: center;
-        }
-        
-        .contact-info-item .info {
-            flex: 1;
-        }
-        
-        .contact-info-item h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        
-        .contact-info-item p {
-            color: var(--medium-gray);
-        }
-        
-        .social-links-contact {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-links-contact a {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: var(--transition);
-        }
-        
-        .social-links-contact a:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-5px);
-        }
-        
-        .social-links-contact a i {
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-        }
-        
-        .contact-form-container {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 40px;
-            box-shadow: var(--shadow);
-        }
-        
-        .contact-form-header {
-            margin-bottom: 30px;
-        }
-        
-        .contact-form-header h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--primary-color);
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--medium-gray);
-            border-radius: 8px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-        
-        .form-control:focus {
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 3px rgba(91, 33, 182, 0.1);
-            outline: none;
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .checkbox-group {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-        }
-        
-        .checkbox-group input {
-            margin-right: 10px;
-            margin-top: 5px;
-        }
-        
-        .checkbox-group label {
-            font-size: 0.9rem;
-            color: var(--dark-gray);
-        }
-        
-        .btn-submit {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 30px;
-            font-weight: 500;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: var(--transition);
-            display: inline-block;
-        }
-        
-        .btn-submit:hover {
-            background-color: #4c1d95;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(91, 33, 182, 0.3);
-        }
-        
-        .map-section {
-            padding: 80px 0;
-            background-color: var(--light-gray);
-        }
-        
-        .map-container {
-            height: 400px;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        @media (max-width: 991px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-info {
-                order: 2;
-            }
-            
-            .contact-form-container {
-                order: 1;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -275,101 +40,106 @@
                 </li>
                 <li><a href="about.html">À propos</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
-                <li><a href="#" class="btn-primary">Démonstration</a></li>
+                <li><a href="contact.html" class="btn-primary">Démonstration</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="contact-hero">
+    <section class="about-hero">
         <div class="container">
-            <div class="contact-content">
+            <div class="about-content">
                 <h1 class="animated-title">Contactez <span class="highlight">Dynovate</span></h1>
-                <p class="hero-description">Vous avez des questions sur nos solutions ? Vous souhaitez une démonstration personnalisée ? N'hésitez pas à nous contacter, notre équipe sera ravie de vous répondre.</p>
+                <p class="hero-description">Vous avez des questions sur nos solutions ? Vous souhaitez une démonstration personnalisée ? N'hésitez pas à nous contacter.</p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section">
+    <section class="section" style="padding: 80px 0;">
         <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-info-header">
-                        <h2>Informations de Contact</h2>
-                        <p>Nous sommes disponibles pour répondre à toutes vos questions.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <!-- Informations de contact -->
+                <div style="background-color: var(--primary-color); color: white; padding: 40px; border-radius: 8px; height: fit-content;">
+                    <h2 style="font-size: 1.8rem; margin-bottom: 30px;">Nos coordonnées</h2>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <div style="display: flex; margin-bottom: 20px;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--accent-color); font-size: 1.4rem; margin-right: 15px; width: 20px;"></i>
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 5px;">Adresse</h3>
+                                <p style="color: #ddd;">15 Rue Innovation, 13001 Marseille, France</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; margin-bottom: 20px;">
+                            <i class="fas fa-phone-alt" style="color: var(--accent-color); font-size: 1.4rem; margin-right: 15px; width: 20px;"></i>
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 5px;">Téléphone</h3>
+                                <p style="color: #ddd;">+33 6 12 34 56 78</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; margin-bottom: 20px;">
+                            <i class="fas fa-envelope" style="color: var(--accent-color); font-size: 1.4rem; margin-right: 15px; width: 20px;"></i>
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 5px;">Email</h3>
+                                <p style="color: #ddd;">contact@dynovate.com</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; margin-bottom: 20px;">
+                            <i class="fas fa-clock" style="color: var(--accent-color); font-size: 1.4rem; margin-right: 15px; width: 20px;"></i>
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 5px;">Horaires</h3>
+                                <p style="color: #ddd;">Du lundi au vendredi : 9h - 18h</p>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="contact-info-list">
-                        <div class="contact-info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="info">
-                                <h3>Adresse</h3>
-                                <p>15 Rue Innovation, 13001 Marseille, France</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-info-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <div class="info">
-                                <h3>Téléphone</h3>
-                                <p>+33 6 12 34 56 78</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-info-item">
-                            <i class="fas fa-envelope"></i>
-                            <div class="info">
-                                <h3>Email</h3>
-                                <p>contact@dynovate.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-info-item">
-                            <i class="fas fa-clock"></i>
-                            <div class="info">
-                                <h3>Horaires</h3>
-                                <p>Du lundi au vendredi : 9h - 18h</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links-container">
-                        <h3>Suivez-nous</h3>
-                        <div class="social-links-contact">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-facebook"></i></a>
+                    <div>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 15px;">Suivez-nous</h3>
+                        <div style="display: flex; gap: 10px;">
+                            <a href="#" style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1); display: flex; justify-content: center; align-items: center; transition: all 0.3s ease;">
+                                <i class="fab fa-linkedin" style="color: white;"></i>
+                            </a>
+                            <a href="#" style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1); display: flex; justify-content: center; align-items: center; transition: all 0.3s ease;">
+                                <i class="fab fa-twitter" style="color: white;"></i>
+                            </a>
+                            <a href="#" style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1); display: flex; justify-content: center; align-items: center; transition: all 0.3s ease;">
+                                <i class="fab fa-instagram" style="color: white;"></i>
+                            </a>
+                            <a href="#" style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.1); display: flex; justify-content: center; align-items: center; transition: all 0.3s ease;">
+                                <i class="fab fa-facebook" style="color: white;"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="contact-form-container">
-                    <div class="contact-form-header">
-                        <h2>Envoyez-nous un message</h2>
-                        <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
-                    </div>
+                <!-- Formulaire de contact -->
+                <div style="background-color: white; padding: 40px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                    <h2 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--primary-color);">Envoyez-nous un message</h2>
+                    <p style="color: var(--dark-gray); margin-bottom: 30px;">Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
                     
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Nom complet</label>
-                            <input type="text" id="name" class="form-control" placeholder="Votre nom" required>
+                    <form>
+                        <div style="margin-bottom: 20px;">
+                            <label for="name" style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--primary-color);">Nom complet</label>
+                            <input type="text" id="name" style="width: 100%; padding: 12px 15px; border: 1px solid #e0e0e0; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 1rem;" placeholder="Votre nom" required>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="Votre email" required>
+                        <div style="margin-bottom: 20px;">
+                            <label for="email" style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--primary-color);">Email</label>
+                            <input type="email" id="email" style="width: 100%; padding: 12px 15px; border: 1px solid #e0e0e0; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 1rem;" placeholder="Votre email" required>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="phone">Téléphone</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="Votre numéro de téléphone">
+                        <div style="margin-bottom: 20px;">
+                            <label for="phone" style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--primary-color);">Téléphone</label>
+                            <input type="tel" id="phone" style="width: 100%; padding: 12px 15px; border: 1px solid #e0e0e0; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 1rem;" placeholder="Votre numéro de téléphone">
                         </div>
                         
-                        <div class="form-group">
-                            <label for="subject">Sujet</label>
-                            <select id="subject" class="form-control" required>
+                        <div style="margin-bottom: 20px;">
+                            <label for="subject" style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--primary-color);">Sujet</label>
+                            <select id="subject" style="width: 100%; padding: 12px 15px; border: 1px solid #e0e0e0; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 1rem;" required>
                                 <option value="" selected disabled>Sélectionnez un sujet</option>
                                 <option value="demo">Demande de démonstration</option>
                                 <option value="info">Informations sur les solutions</option>
@@ -378,17 +148,17 @@
                             </select>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" class="form-control" placeholder="Votre message" required></textarea>
+                        <div style="margin-bottom: 20px;">
+                            <label for="message" style="display: block; margin-bottom: 8px; font-weight: 500; color: var(--primary-color);">Message</label>
+                            <textarea id="message" style="width: 100%; padding: 12px 15px; border: 1px solid #e0e0e0; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 1rem; min-height: 150px; resize: vertical;" placeholder="Votre message" required></textarea>
                         </div>
                         
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="privacy" required>
-                            <label for="privacy">J'accepte que mes données soient traitées conformément à la politique de confidentialité de Dynovate.</label>
+                        <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+                            <input type="checkbox" id="privacy" style="margin-right: 10px; margin-top: 5px;" required>
+                            <label for="privacy" style="font-size: 0.9rem; color: var(--dark-gray);">J'accepte que mes données soient traitées conformément à la politique de confidentialité de Dynovate.</label>
                         </div>
                         
-                        <button type="submit" class="btn-submit">Envoyer le message</button>
+                        <button type="submit" style="background-color: var(--accent-color); color: white; padding: 12px 25px; border: none; border-radius: 30px; font-weight: 500; font-size: 1rem; cursor: pointer; transition: all 0.3s ease;">Envoyer le message</button>
                     </form>
                 </div>
             </div>
@@ -396,9 +166,9 @@
     </section>
 
     <!-- Map Section -->
-    <section class="map-section">
+    <section style="padding: 80px 0; background-color: var(--light-gray);">
         <div class="container">
-            <div class="map-container">
+            <div style="height: 400px; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46542.17104364897!2d5.3658467629058465!3d43.29693034542878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9bf4344da5333%3A0x40819a5fd970220!2sMarseille!5e0!3m2!1sfr!2sfr!4v1653067554317!5m2!1sfr!2sfr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>

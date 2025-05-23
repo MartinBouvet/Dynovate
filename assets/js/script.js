@@ -1,7 +1,3 @@
-// Variables globales pour l'API OpenAI
-let openAIKey = ""; // À remplir plus tard
-let openAIEndpoint = "https://api.openai.com/v1/chat/completions";
-
 document.addEventListener("DOMContentLoaded", function() {
     // Gestion du loader
     window.addEventListener("load", function() {
@@ -98,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     addMessage(message, "user");
                     chatbotInput.value = "";
                     
-                    // Simulation de réponse (à remplacer par l'API OpenAI)
+                    // Simulation de réponse
                     setTimeout(() => {
                         getChatbotResponse(message);
                     }, 1000);
@@ -137,60 +133,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Fonction pour obtenir une réponse du chatbot
     function getChatbotResponse(message) {
-        // Si l'API OpenAI est configurée
-        if (openAIKey) {
-            fetchOpenAIResponse(message);
-        } else {
-            // Réponses prédéfinies en attendant l'intégration de l'API
-            const responses = [
-                "Merci pour votre message. Un de nos conseillers va vous répondre rapidement.",
-                "Nous proposons plusieurs solutions d'IA pour améliorer vos communications. Souhaitez-vous en savoir plus sur une solution spécifique ?",
-                "Dynovate offre des solutions pour mail, réseaux sociaux, téléphone et web. Quel canal vous intéresse le plus ?",
-                "Je comprends votre question. Pour plus de détails, pourriez-vous me préciser votre secteur d'activité ?",
-                "Excellente question ! Nos solutions sont personnalisables selon vos besoins spécifiques."
-            ];
-            
-            const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-            addMessage(randomResponse, "bot");
-        }
-    }
-
-    // Fonction pour appeler l'API OpenAI (à configurer ultérieurement)
-    async function fetchOpenAIResponse(message) {
-        try {
-            const response = await fetch(openAIEndpoint, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${openAIKey}`
-                },
-                body: JSON.stringify({
-                    model: "gpt-3.5-turbo",
-                    messages: [
-                        {
-                            role: "system",
-                            content: "Vous êtes l'assistant virtuel de Dynovate, une entreprise spécialisée dans les solutions d'IA pour la communication d'entreprise. Répondez de manière concise et professionnelle."
-                        },
-                        {
-                            role: "user",
-                            content: message
-                        }
-                    ],
-                    max_tokens: 150
-                })
-            });
-            
-            const data = await response.json();
-            if (data.choices && data.choices.length > 0) {
-                const botResponse = data.choices[0].message.content;
-                addMessage(botResponse, "bot");
-            } else {
-                throw new Error("Réponse invalide de l'API");
-            }
-        } catch (error) {
-            console.error("Erreur lors de l'appel à OpenAI:", error);
-            addMessage("Désolé, je rencontre un problème technique. Veuillez réessayer plus tard.", "bot");
-        }
+        // Réponses prédéfinies
+        const responses = [
+            "Merci pour votre message. Un de nos conseillers va vous répondre rapidement.",
+            "Nous proposons plusieurs solutions d'IA pour améliorer vos communications. Souhaitez-vous en savoir plus sur une solution spécifique ?",
+            "Dynovate offre des solutions pour mail, réseaux sociaux, téléphone et web. Quel canal vous intéresse le plus ?",
+            "Je comprends votre question. Pour plus de détails, pourriez-vous me préciser votre secteur d'activité ?",
+            "Excellente question ! Nos solutions sont personnalisables selon vos besoins spécifiques."
+        ];
+        
+        const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        addMessage(randomResponse, "bot");
     }
 
     // Animation au scroll pour les éléments
@@ -226,4 +179,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // Lancer l'animation au chargement initial et au scroll
     window.addEventListener("scroll", animateOnScroll);
     animateOnScroll(); // Appel initial pour les éléments déjà visibles
+
+    // Appliquer la classe 'scrolled' à la navbar dès le chargement si nécessaire
+    if (window.scrollY > 50) {
+        const navbar = document.querySelector(".navbar");
+        if (navbar) {
+            navbar.classList.add("scrolled");
+        }
+    }
 });

@@ -10,122 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Styles spécifiques à la page de détail */
-        .solution-hero {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 150px 0 100px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .solution-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 70% 50%, rgba(91, 33, 182, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
-        }
-        
-        .solution-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .solution-content {
-            flex: 1;
-            max-width: 600px;
-        }
-        
-        .solution-icon {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .solution-icon i {
-            font-size: 8rem;
-            color: var(--secondary-color);
-            opacity: 0.8;
-        }
-        
-        .solution-detail {
-            padding: 100px 0;
-        }
-        
-        .detail-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-top: 70px;
-        }
-        
-        .detail-content h2 {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            position: relative;
-        }
-        
-        .detail-content h2::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent-color);
-        }
-        
-        .detail-text {
-            margin-bottom: 30px;
-            color: var(--dark-gray);
-        }
-        
-        .feature-box {
-            background-color: var(--light-gray);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            margin-bottom: 30px;
-            transition: var(--transition);
-        }
-        
-        .feature-box:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-        }
-        
-        .feature-box h3 {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-        
-        .feature-box h3 i {
-            color: var(--accent-color);
-            margin-right: 15px;
-            font-size: 1.5rem;
-        }
-        
-        .detail-image {
-            position: relative;
-        }
-        
-        .image-wrapper {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
         .phone-demo {
             background-color: white;
             border-radius: 10px;
@@ -317,38 +201,6 @@
             font-size: 1rem;
             margin-bottom: 5px;
         }
-        
-        @media (max-width: 991px) {
-            .solution-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .solution-content {
-                margin-bottom: 50px;
-            }
-            
-            .detail-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .detail-content h2::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .detail-content {
-                text-align: center;
-            }
-            
-            .feature-box h3 {
-                justify-content: center;
-            }
-            
-            .solutions-nav {
-                flex-wrap: wrap;
-            }
-        }
     </style>
 </head>
 <body>
@@ -381,7 +233,7 @@
                 </li>
                 <li><a href="about.html">À propos</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="#" class="btn-primary">Démonstration</a></li>
+                <li><a href="contact.html" class="btn-primary">Démonstration</a></li>
             </ul>
         </div>
     </nav>
