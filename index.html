@@ -4,11 +4,254 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynovate | L'avenir de la communication IA</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styles spécifiques à la page d'accueil */
+        .hero-icons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .icon-container {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .icon-container:nth-child(2) {
+            animation-delay: -0.5s;
+        }
+        
+        .icon-container:nth-child(3) {
+            animation-delay: -1s;
+        }
+        
+        .icon-container:nth-child(4) {
+            animation-delay: -1.5s;
+        }
+        
+        .icon-container i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            filter: drop-shadow(0 0 10px rgba(91, 33, 182, 0.5));
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        .services {
+            padding: 100px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--medium-gray);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-color), #7c3aed);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 30px rgba(91, 33, 182, 0.3);
+        }
+        
+        .service-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .service-card p {
+            color: var(--dark-gray);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .btn-text {
+            color: var(--accent-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .btn-text:hover {
+            transform: translateX(5px);
+        }
+        
+        .benefits {
+            padding: 100px 0;
+        }
+        
+        .benefits-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .text-left {
+            text-align: left;
+        }
+        
+        .text-left h2::after {
+            left: 0;
+            transform: none;
+        }
+        
+        .benefits-list {
+            margin-top: 40px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+        
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-color), #7c3aed);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(91, 33, 182, 0.3);
+        }
+        
+        .benefit-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .benefit-text h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+        
+        .benefit-text p {
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+        
+        .benefits-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .image-container {
+            position: relative;
+        }
+        
+        .floating {
+            animation: float 4s ease-in-out infinite;
+            filter: drop-shadow(0 10px 30px rgba(91, 33, 182, 0.3));
+        }
+        
+        @media (max-width: 991px) {
+            .benefits-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+            
+            .text-left h2::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .hero-icons {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                max-width: 300px;
+            }
+            
+            .icon-container {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .icon-container i {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .benefit-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .benefit-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Loader -->
@@ -44,10 +287,10 @@
                 <li class="dropdown">
                     <a href="solutions.html">Nos Solutions</a>
                     <div class="dropdown-content">
-                        <a href="solution-mail.html">Réponse par Mail</a>
-                        <a href="solution-social.html">Réseaux Sociaux</a>
-                        <a href="solution-phone.html">Réponse Téléphonique</a>
-                        <a href="solution-chatbot.html">Chatbot Web</a>
+                        <a href="solutions/solution-mail.html">Réponse par Mail</a>
+                        <a href="solutions/solution-social.html">Réseaux Sociaux</a>
+                        <a href="solutions/solution-phone.html">Réponse Téléphonique</a>
+                        <a href="solutions/solution-chatbot.html">Chatbot Web</a>
                     </div>
                 </li>
                 <li><a href="about.html">À propos</a></li>
@@ -101,7 +344,7 @@
                     </div>
                     <h3>Réponse par Mail</h3>
                     <p>Notre IA traite, classe et répond automatiquement à vos emails pour une gestion efficace de votre boîte de réception.</p>
-                    <a href="solution-mail.html" class="btn-text">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    <a href="solutions/solution-mail.html" class="btn-text">En savoir plus <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -109,7 +352,7 @@
                     </div>
                     <h3>Réseaux Sociaux</h3>
                     <p>Interaction constante avec votre audience grâce à notre IA qui répond aux questions comme un vrai Community Manager.</p>
-                    <a href="solution-social.html" class="btn-text">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    <a href="solutions/solution-social.html" class="btn-text">En savoir plus <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -117,7 +360,7 @@
                     </div>
                     <h3>Réponse Téléphonique</h3>
                     <p>Service disponible 24/7 pour répondre aux appels, fournir des informations et prendre des rendez-vous.</p>
-                    <a href="solution-phone.html" class="btn-text">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    <a href="solutions/solution-phone.html" class="btn-text">En savoir plus <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -125,7 +368,7 @@
                     </div>
                     <h3>Chatbot Web</h3>
                     <p>Recherche intelligente et interactions naturelles pour dynamiser l'expérience client sur votre site web.</p>
-                    <a href="solution-chatbot.html" class="btn-text">En savoir plus <i class="fas fa-arrow-right"></i></a>
+                    <a href="solutions/solution-chatbot.html" class="btn-text">En savoir plus <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -229,18 +472,18 @@
                     <div class="footer-column">
                         <h4>Solutions</h4>
                         <ul>
-                            <li><a href="solution-mail.html">Réponse par Mail</a></li>
-                            <li><a href="solution-social.html">Réseaux Sociaux</a></li>
-                            <li><a href="solution-phone.html">Réponse Téléphonique</a></li>
-                            <li><a href="solution-chatbot.html">Chatbot Web</a></li>
+                            <li><a href="solutions/solution-mail.html">Réponse par Mail</a></li>
+                            <li><a href="solutions/solution-social.html">Réseaux Sociaux</a></li>
+                            <li><a href="solutions/solution-phone.html">Réponse Téléphonique</a></li>
+                            <li><a href="solutions/solution-chatbot.html">Chatbot Web</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4>Contact</h4>
                         <ul class="contact-info">
                             <li><i class="fas fa-map-marker-alt"></i> Marseille, France</li>
-                            <li><i class="fas fa-envelope"></i> contact@dynovate.com</li>
-                            <li><i class="fas fa-phone"></i> +33 6 12 34 56 78</li>
+                            <li><i class="fas fa-envelope"></i> dynovateai@gmail.com</li>
+                            <li><i class="fas fa-phone"></i> +33 6 64 66 45 06</li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -291,6 +534,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

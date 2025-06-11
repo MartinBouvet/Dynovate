@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À propos | Dynovate</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -192,134 +192,6 @@
             transition: all 0.3s ease;
         }
         
-        .timeline {
-            position: relative;
-            max-width: 1000px;
-            margin: 70px auto 0;
-            padding: 0 20px;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background-color: #5b21b6;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 50px;
-        }
-        
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .timeline-content {
-            width: 45%;
-            padding: 30px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content {
-            float: right;
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-content {
-            float: left;
-        }
-        
-        .timeline-content::after {
-            content: '';
-            position: absolute;
-            top: 20px;
-            width: 20px;
-            height: 20px;
-            right: -10px;
-            background-color: white;
-            transform: rotate(45deg);
-            box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.05);
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content::after {
-            left: -10px;
-            right: auto;
-            box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.05);
-        }
-        
-        .timeline-date {
-            position: absolute;
-            top: 12px;
-            width: 100px;
-            padding: 8px 0;
-            background-color: #5b21b6;
-            color: white;
-            border-radius: 20px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 0.9rem;
-            z-index: 1;
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-date {
-            right: -120px;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-date {
-            left: -120px;
-        }
-        
-        .timeline-dot {
-            position: absolute;
-            top: 20px;
-            width: 20px;
-            height: 20px;
-            background-color: #5b21b6;
-            border-radius: 50%;
-            z-index: 1;
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 0 0 5px rgba(91, 33, 182, 0.2);
-        }
-        
-        .timeline-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        
-        .timeline-content p {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        .timeline-content i {
-            font-size: 2rem;
-            color: #5b21b6;
-            margin-bottom: 15px;
-            display: block;
-        }
-        
-        .clearfix::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        
         /* Responsive styles */
         @media (max-width: 991px) {
             .about-container {
@@ -330,39 +202,6 @@
             .about-content h2::after {
                 left: 50%;
                 transform: translateX(-50%);
-            }
-            
-            .timeline::before {
-                left: 40px;
-            }
-            
-            .timeline-content {
-                width: calc(100% - 100px);
-                float: right;
-                margin-left: 100px;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-content,
-            .timeline-item:nth-child(even) .timeline-content {
-                float: right;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-content::after,
-            .timeline-item:nth-child(even) .timeline-content::after {
-                left: -10px;
-                right: auto;
-                box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.05);
-            }
-            
-            .timeline-dot {
-                left: 40px;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-date,
-            .timeline-item:nth-child(even) .timeline-date {
-                left: -5px;
-                top: -50px;
-                width: 150px;
             }
         }
         
@@ -402,10 +241,10 @@
                 <li class="dropdown">
                     <a href="solutions.html">Nos Solutions</a>
                     <div class="dropdown-content">
-                        <a href="solution-mail.html">Réponse par Mail</a>
-                        <a href="solution-social.html">Réseaux Sociaux</a>
-                        <a href="solution-phone.html">Réponse Téléphonique</a>
-                        <a href="solution-chatbot.html">Chatbot Web</a>
+                        <a href="solutions/solution-mail.html">Réponse par Mail</a>
+                        <a href="solutions/solution-social.html">Réseaux Sociaux</a>
+                        <a href="solutions/solution-phone.html">Réponse Téléphonique</a>
+                        <a href="solutions/solution-chatbot.html">Chatbot Web</a>
                     </div>
                 </li>
                 <li><a href="about.html" class="active">À propos</a></li>
@@ -539,7 +378,7 @@
                     </div>
                     <div class="team-info">
                         <h3>Martin Bouvet</h3>
-                        <p class="role">Fondateur & CEO</p>
+                        <p class="role">Fondateur</p>
                         <p class="bio">Ingénieur en IA, Martin s'occupe du développement technique des solutions pour Dynovate.</p>
                         <div class="team-social">
                             <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -564,14 +403,14 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="team-member">
                     <div class="team-photo">
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="team-info">
-                        <h3>Mathias Auzière</h3>
-                        <p class="role">Responsable Commercial</p>
+                        <h3>Mathias Auziere</h3>
+                        <p class="role">Fondateur</p>
                         <p class="bio">Fort d'une expérience dans le SaaS B2B, Mathias développe les stratégies commerciales et les partenariats de Dynovate.</p>
                         <div class="team-social">
                             <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -586,76 +425,14 @@
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="team-info">
-                        <h3>Sophie Blanc</h3>
-                        <p class="role">UX/UI Designer</p>
-                        <p class="bio">Sophie conçoit des interfaces intuitives et esthétiques pour offrir une expérience utilisateur optimale sur toutes nos solutions.</p>
+                        <h3>Hugo Azeggagh</h3>
+                        <p class="role">Fondateur</p>
+                        <p class="bio">Community manager de Dynovate, participe également aux décisions de la boite.</p>
                         <div class="team-social">
                             <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
                             <a href="#"><i class="fas fa-envelope"></i></a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Notre Parcours Section -->
-    <section class="about-section" style="background-color: #f9f9f9; padding: 100px 0;">
-        <div class="container">
-            <div class="section-header" style="text-align: center; margin-bottom: 50px;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Notre Parcours</h2>
-                <p style="color: #666; max-width: 700px; margin: 0 auto;">Les étapes clés du développement de Dynovate, de l'idée initiale à aujourd'hui</p>
-            </div>
-            
-            <div class="timeline">
-                <div class="timeline-item clearfix">
-                    <div class="timeline-content">
-                        <i class="fas fa-lightbulb"></i>
-                        <span class="timeline-date">Jan 2025</span>
-                        <span class="timeline-dot"></span>
-                        <h3>Naissance de l'idée</h3>
-                        <p>Première conceptualisation du projet Dynovate dans le cadre d'études d'ingénieur spécialisé en IA.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item clearfix">
-                    <div class="timeline-content">
-                        <i class="fas fa-rocket"></i>
-                        <span class="timeline-date">Mar 2025</span>
-                        <span class="timeline-dot"></span>
-                        <h3>Obtention du statut Pépite</h3>
-                        <p>Accréditation du projet par le programme Pépite pour encourager l'entrepreneuriat étudiant.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item clearfix">
-                    <div class="timeline-content">
-                        <i class="fas fa-laptop-code"></i>
-                        <span class="timeline-date">Avr 2025</span>
-                        <span class="timeline-dot"></span>
-                        <h3>Développement du prototype</h3>
-                        <p>Création des premiers prototypes fonctionnels pour nos solutions d'IA conversationnelle.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item clearfix">
-                    <div class="timeline-content">
-                        <i class="fas fa-users"></i>
-                        <span class="timeline-date">Mai 2025</span>
-                        <span class="timeline-dot"></span>
-                        <h3>Formation de l'équipe</h3>
-                        <p>Constitution de l'équipe fondatrice avec des talents complémentaires en développement, design et business.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item clearfix">
-                    <div class="timeline-content">
-                        <i class="fas fa-chart-line"></i>
-                        <span class="timeline-date">Futur</span>
-                        <span class="timeline-dot"></span>
-                        <h3>La suite...</h3>
-                        <p>Développement de nouvelles fonctionnalités, expansion sur le marché national puis international.</p>
                     </div>
                 </div>
             </div>
@@ -699,18 +476,18 @@
                     <div class="footer-column">
                         <h4>Solutions</h4>
                         <ul>
-                            <li><a href="solution-mail.html">Réponse par Mail</a></li>
-                            <li><a href="solution-social.html">Réseaux Sociaux</a></li>
-                            <li><a href="solution-phone.html">Réponse Téléphonique</a></li>
-                            <li><a href="solution-chatbot.html">Chatbot Web</a></li>
+                            <li><a href="solutions/solution-mail.html">Réponse par Mail</a></li>
+                            <li><a href="solutions/solution-social.html">Réseaux Sociaux</a></li>
+                            <li><a href="solutions/solution-phone.html">Réponse Téléphonique</a></li>
+                            <li><a href="solutions/solution-chatbot.html">Chatbot Web</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4>Contact</h4>
                         <ul class="contact-info">
                             <li><i class="fas fa-map-marker-alt"></i> Marseille, France</li>
-                            <li><i class="fas fa-envelope"></i> contact@dynovate.com</li>
-                            <li><i class="fas fa-phone"></i> +33 6 12 34 56 78</li>
+                            <li><i class="fas fa-envelope"></i> dynovateai@gmail.com</li>
+                            <li><i class="fas fa-phone"></i> +33 6 64 66 45 06</li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -761,6 +538,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

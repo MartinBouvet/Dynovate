@@ -4,27 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nos Solutions | Dynovate</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Styles spécifiques à la page Solutions */
-        :root {
-            --primary-color: #000000;
-            --secondary-color: #ffffff;
-            --accent-color: #5b21b6;
-            --text-color: #333333;
-            --light-gray: #f5f5f5;
-            --medium-gray: #e0e0e0;
-            --dark-gray: #666666;
-            --transition: all 0.3s ease;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --border-radius: 10px;
-        }
-        
-        /* Hero Section */
         .solutions-hero {
             background-color: var(--primary-color);
             background-image: radial-gradient(circle at 30% 50%, rgba(91, 33, 182, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
@@ -72,194 +58,6 @@
             line-height: 1.6;
         }
         
-        /* Solutions Section */
-        .solution-details {
-            padding: 100px 0;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 70px;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            display: inline-block;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--accent-color);
-        }
-        
-        .section-header p {
-            font-size: 1.1rem;
-            color: var(--dark-gray);
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        
-        .solution-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            margin-top: 30px;
-        }
-        
-        .solution-item {
-            background-color: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            border: 1px solid var(--medium-gray);
-        }
-        
-        .solution-item:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .solution-image {
-            height: 200px;
-            background-color: var(--light-gray);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .solution-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(91, 33, 182, 0.1) 0%, rgba(91, 33, 182, 0.3) 100%);
-            z-index: 1;
-        }
-        
-        .solution-image i {
-            font-size: 5rem;
-            color: var(--accent-color);
-            z-index: 2;
-            filter: drop-shadow(0 5px 15px rgba(91, 33, 182, 0.3));
-        }
-        
-        .solution-info {
-            padding: 30px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .solution-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .solution-info h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--accent-color);
-        }
-        
-        .solution-info p {
-            color: var(--dark-gray);
-            margin-bottom: 25px;
-            flex: 1;
-            line-height: 1.6;
-        }
-        
-        .features-list {
-            margin-bottom: 25px;
-        }
-        
-        .features-list li {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 12px;
-            color: var(--dark-gray);
-        }
-        
-        .features-list li i {
-            color: var(--accent-color);
-            margin-right: 10px;
-            margin-top: 3px;
-        }
-        
-        .btn-primary {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: var(--transition);
-            display: inline-block;
-            text-decoration: none;
-            text-align: center;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(91, 33, 182, 0.3);
-        }
-        
-        /* CTA Section */
-        .cta {
-            background-color: var(--primary-color);
-            background-image: radial-gradient(circle at 70% 50%, rgba(91, 33, 182, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
-            color: var(--secondary-color);
-            padding: 100px 0;
-        }
-        
-        .cta-container {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .cta p {
-            margin-bottom: 30px;
-            font-size: 1.2rem;
-            color: #ccc;
-            line-height: 1.6;
-        }
-        
-        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -272,15 +70,6 @@
         }
         
         /* Responsive */
-        @media (max-width: 991px) {
-            .solution-grid {
-                grid-template-columns: 1fr;
-                max-width: 600px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-        
         @media (max-width: 768px) {
             .animated-title {
                 font-size: 2.3rem;
@@ -314,10 +103,10 @@
                 <li class="dropdown">
                     <a href="solutions.html" class="active">Nos Solutions</a>
                     <div class="dropdown-content">
-                        <a href="solution-mail.html">Réponse par Mail</a>
-                        <a href="solution-social.html">Réseaux Sociaux</a>
-                        <a href="solution-phone.html">Réponse Téléphonique</a>
-                        <a href="solution-chatbot.html">Chatbot Web</a>
+                        <a href="solutions/solution-mail.html">Réponse par Mail</a>
+                        <a href="solutions/solution-social.html">Réseaux Sociaux</a>
+                        <a href="solutions/solution-phone.html">Réponse Téléphonique</a>
+                        <a href="solutions/solution-chatbot.html">Chatbot Web</a>
                     </div>
                 </li>
                 <li><a href="about.html">À propos</a></li>
@@ -356,7 +145,7 @@
                             <li><i class="fas fa-check-circle"></i> Réponses automatiques personnalisées</li>
                             <li><i class="fas fa-check-circle"></i> Priorisation des messages importants</li>
                         </ul>
-                        <a href="solution-mail.html" class="btn-primary">Découvrir cette solution</a>
+                        <a href="solutions/solution-mail.html" class="btn-primary">Découvrir cette solution</a>
                     </div>
                 </div>
 
@@ -372,7 +161,7 @@
                             <li><i class="fas fa-check-circle"></i> Gestion multiplateforme (Twitter, Instagram, etc.)</li>
                             <li><i class="fas fa-check-circle"></i> Tone of voice personnalisé à votre marque</li>
                         </ul>
-                        <a href="solution-social.html" class="btn-primary">Découvrir cette solution</a>
+                        <a href="solutions/solution-social.html" class="btn-primary">Découvrir cette solution</a>
                     </div>
                 </div>
 
@@ -388,7 +177,7 @@
                             <li><i class="fas fa-check-circle"></i> Prise de rendez-vous automatisée</li>
                             <li><i class="fas fa-check-circle"></i> Transfert intelligent vers un conseiller si nécessaire</li>
                         </ul>
-                        <a href="solution-phone.html" class="btn-primary">Découvrir cette solution</a>
+                        <a href="solutions/solution-phone.html" class="btn-primary">Découvrir cette solution</a>
                     </div>
                 </div>
 
@@ -404,8 +193,44 @@
                             <li><i class="fas fa-check-circle"></i> Recherche produit intelligente</li>
                             <li><i class="fas fa-check-circle"></i> Interface conversationnelle humanisée</li>
                         </ul>
-                        <a href="solution-chatbot.html" class="btn-primary">Découvrir cette solution</a>
+                        <a href="solutions/solution-chatbot.html" class="btn-primary">Découvrir cette solution</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section style="padding: 100px 0; background-color: var(--light-gray);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pourquoi Choisir Nos Solutions IA ?</h2>
+                <p>Des avantages concrets et mesurables pour transformer votre entreprise</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
+                <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: var(--shadow); text-align: center; transition: transform 0.3s ease;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent-color), #7c3aed); border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; box-shadow: 0 10px 30px rgba(91, 33, 182, 0.3);">
+                        <i class="fas fa-rocket" style="font-size: 2rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--primary-color);">Performance Optimisée</h3>
+                    <p style="color: var(--dark-gray); line-height: 1.6;">Automatisez jusqu'à 80% de vos communications routinières et libérez du temps pour les tâches à forte valeur ajoutée.</p>
+                </div>
+                
+                <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: var(--shadow); text-align: center; transition: transform 0.3s ease;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent-color), #7c3aed); border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; box-shadow: 0 10px 30px rgba(91, 33, 182, 0.3);">
+                        <i class="fas fa-euro-sign" style="font-size: 2rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--primary-color);">ROI Immédiat</h3>
+                    <p style="color: var(--dark-gray); line-height: 1.6;">Réduisez vos coûts opérationnels tout en améliorant la qualité et la rapidité de vos réponses clients.</p>
+                </div>
+                
+                <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: var(--shadow); text-align: center; transition: transform 0.3s ease;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent-color), #7c3aed); border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px; box-shadow: 0 10px 30px rgba(91, 33, 182, 0.3);">
+                        <i class="fas fa-chart-line" style="font-size: 2rem; color: white;"></i>
+                    </div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--primary-color);">Évolutivité</h3>
+                    <p style="color: var(--dark-gray); line-height: 1.6;">Nos solutions s'adaptent à votre croissance sans nécessiter de ressources humaines supplémentaires.</p>
                 </div>
             </div>
         </div>
@@ -446,18 +271,18 @@
                     <div class="footer-column">
                         <h4>Solutions</h4>
                         <ul>
-                            <li><a href="solution-mail.html">Réponse par Mail</a></li>
-                            <li><a href="solution-social.html">Réseaux Sociaux</a></li>
-                            <li><a href="solution-phone.html">Réponse Téléphonique</a></li>
-                            <li><a href="solution-chatbot.html">Chatbot Web</a></li>
+                            <li><a href="solutions/solution-mail.html">Réponse par Mail</a></li>
+                            <li><a href="solutions/solution-social.html">Réseaux Sociaux</a></li>
+                            <li><a href="solutions/solution-phone.html">Réponse Téléphonique</a></li>
+                            <li><a href="solutions/solution-chatbot.html">Chatbot Web</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4>Contact</h4>
                         <ul class="contact-info">
                             <li><i class="fas fa-map-marker-alt"></i> Marseille, France</li>
-                            <li><i class="fas fa-envelope"></i> contact@dynovate.com</li>
-                            <li><i class="fas fa-phone"></i> +33 6 12 34 56 78</li>
+                            <li><i class="fas fa-envelope"></i> dynovateai@gmail.com</li>
+                            <li><i class="fas fa-phone"></i> +33 6 64 66 45 06</li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -508,6 +333,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

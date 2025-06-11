@@ -4,204 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solution Réseaux Sociaux | Dynovate</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Styles spécifiques à la page de solution réseaux sociaux */
-        :root {
-            --primary-color: #000000;
-            --secondary-color: #ffffff;
-            --accent-color: #5b21b6;
-            --text-color: #333333;
-            --light-gray: #f5f5f5;
-            --medium-gray: #e0e0e0;
-            --dark-gray: #666666;
-            --transition: all 0.3s ease;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --border-radius: 10px;
-        }
-        
-        .solution-hero {
-            background-color: var(--primary-color);
-            background-image: radial-gradient(circle at 70% 30%, rgba(91, 33, 182, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
-            color: var(--secondary-color);
-            padding: 150px 0 100px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .solution-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .solution-content {
-            flex: 1;
-            max-width: 600px;
-        }
-        
-        .solution-icon {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .solution-icon i {
-            font-size: 8rem;
-            color: var(--secondary-color);
-            opacity: 0.8;
-            filter: drop-shadow(0 0 10px rgba(91, 33, 182, 0.5));
-        }
-        
-        .animated-title {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            animation: fadeInUp 1s forwards;
-        }
-        
-        .highlight {
-            color: var(--accent-color);
-            position: relative;
-        }
-        
-        .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: 5px;
-            left: 0;
-            width: 100%;
-            height: 8px;
-            background-color: rgba(91, 33, 182, 0.3);
-            z-index: -1;
-        }
-        
-        .hero-description {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .btn-primary {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: var(--transition);
-            display: inline-block;
-            text-decoration: none;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(91, 33, 182, 0.3);
-        }
-        
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--secondary-color);
-            padding: 11px 24px;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: var(--transition);
-            display: inline-block;
-            border: 1px solid var(--secondary-color);
-            text-decoration: none;
-        }
-        
-        .btn-secondary:hover {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-        
-        .solution-detail {
-            padding: 100px 0;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .detail-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-top: 50px;
-        }
-        
-        .detail-content h2 {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .detail-content h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent-color);
-        }
-        
-        .detail-text {
-            margin-bottom: 30px;
-            color: var(--dark-gray);
-            line-height: 1.7;
-        }
-        
-        .feature-box {
-            background-color: var(--light-gray);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            margin-bottom: 30px;
-            transition: var(--transition);
-            border-left: 4px solid var(--accent-color);
-        }
-        
-        .feature-box:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-        }
-        
-        .feature-box h3 {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-            color: var(--primary-color);
-        }
-        
-        .feature-box h3 i {
-            color: var(--accent-color);
-            margin-right: 15px;
-            font-size: 1.5rem;
-        }
-        
-        .feature-box p {
-            color: var(--dark-gray);
-            line-height: 1.6;
-        }
-        
-        /* Social Demo Styles */
         .social-demo {
             background-color: white;
             border-radius: var(--border-radius);
@@ -213,7 +21,7 @@
         }
         
         .social-header {
-            background-color: #1DA1F2; /* Twitter blue */
+            background-color: #1DA1F2;
             color: white;
             padding: 15px 20px;
             display: flex;
@@ -384,150 +192,13 @@
             background-color: #4c1d95;
             transform: translateY(-2px);
         }
-        
-        /* Solutions Navigation */
-        .solutions-nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 80px;
-            gap: 20px;
-        }
-        
-        .solution-nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 25px 20px;
-            border-radius: var(--border-radius);
-            background-color: white;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            width: 220px;
-            text-align: center;
-            text-decoration: none;
-            color: var(--text-color);
-        }
-        
-        .solution-nav-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-        
-        .solution-nav-item i {
-            font-size: 2.2rem;
-            color: var(--accent-color);
-            margin-bottom: 15px;
-        }
-        
-        .solution-nav-item h4 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            color: var(--primary-color);
-        }
-        
-        .solution-nav-item p {
-            color: var(--dark-gray);
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-        
-        /* Active Solution Nav Item */
-        .solution-nav-item.active {
-            background-color: var(--accent-color);
-            color: white;
-        }
-        
-        .solution-nav-item.active i,
-        .solution-nav-item.active h4,
-        .solution-nav-item.active p {
-            color: white;
-        }
-        
-        /* CTA Section */
-        .cta {
-            background-color: var(--primary-color);
-            background-image: radial-gradient(circle at 30% 50%, rgba(91, 33, 182, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
-            color: var(--secondary-color);
-            padding: 100px 0;
-        }
-        
-        .cta-container {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .cta p {
-            margin-bottom: 30px;
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: #ccc;
-        }
-        
-        /* Responsive */
-        @media (max-width: 991px) {
-            .solution-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .solution-content {
-                margin-bottom: 50px;
-            }
-            
-            .detail-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .detail-content h2::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .detail-content {
-                text-align: center;
-            }
-            
-            .feature-box h3 {
-                justify-content: center;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .animated-title {
-                font-size: 2.3rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-            
-            .solutions-nav {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .solution-nav-item {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">
+            <a href="../index.html" class="logo">
                 <svg width="40" height="40" viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="40" fill="black"/>
                     <path d="M50,25 C53,30 56,32 59,38 C55,40 50,50 50,55 C50,60 45,40 41,38 C44,32 47,30 50,25" fill="white">
@@ -541,9 +212,9 @@
                 <span></span>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="../index.html">Accueil</a></li>
                 <li class="dropdown">
-                    <a href="solutions.html" class="active">Nos Solutions</a>
+                    <a href="../solutions.html" class="active">Nos Solutions</a>
                     <div class="dropdown-content">
                         <a href="solution-mail.html">Réponse par Mail</a>
                         <a href="solution-social.html" class="active">Réseaux Sociaux</a>
@@ -551,9 +222,9 @@
                         <a href="solution-chatbot.html">Chatbot Web</a>
                     </div>
                 </li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="contact.html" class="btn-primary">Démonstration</a></li>
+                <li><a href="../about.html">À propos</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="../contact.html" class="btn-primary">Démonstration</a></li>
             </ul>
         </div>
     </nav>
@@ -565,7 +236,7 @@
                 <h1 class="animated-title">Solution <span class="highlight">Réseaux Sociaux</span></h1>
                 <p class="hero-description">Maintenez une présence active et réactive sur tous vos réseaux sociaux grâce à notre IA qui interagit avec votre audience comme un véritable Community Manager.</p>
                 <div class="hero-buttons">
-                    <a href="contact.html" class="btn-primary">Demander une démo</a>
+                    <a href="../contact.html" class="btn-primary">Demander une démo</a>
                     <a href="#details" class="btn-secondary">En savoir plus</a>
                 </div>
             </div>
@@ -664,8 +335,8 @@
                     <h4>Réponse par Mail</h4>
                     <p>Gestion intelligente des emails</p>
                 </a>
-                <a href="solution-social.html" class="solution-nav-item active">
-                    <i class="fas fa-share-alt"></i>
+                <a href="solution-social.html" class="solution-nav-item" style="background-color: var(--accent-color); color: white;">
+                    <i class="fas fa-share-alt" style="color: white;"></i>
                     <h4>Réseaux Sociaux</h4>
                     <p>Community management IA</p>
                 </a>
@@ -689,7 +360,7 @@
             <div class="cta-container">
                 <h2>Prêt à transformer votre présence sur les réseaux sociaux ?</h2>
                 <p>Demandez une démonstration personnalisée de notre solution Réseaux Sociaux.</p>
-                <a href="contact.html" class="btn-primary">Demander une démo</a>
+                <a href="../contact.html" class="btn-primary">Demander une démo</a>
             </div>
         </div>
     </section>
@@ -711,10 +382,10 @@
                     <div class="footer-column">
                         <h4>Navigation</h4>
                         <ul>
-                            <li><a href="index.html">Accueil</a></li>
-                            <li><a href="solutions.html">Nos Solutions</a></li>
-                            <li><a href="about.html">À propos</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="../index.html">Accueil</a></li>
+                            <li><a href="../solutions.html">Nos Solutions</a></li>
+                            <li><a href="../about.html">À propos</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -730,8 +401,8 @@
                         <h4>Contact</h4>
                         <ul class="contact-info">
                             <li><i class="fas fa-map-marker-alt"></i> Marseille, France</li>
-                            <li><i class="fas fa-envelope"></i> contact@dynovate.com</li>
-                            <li><i class="fas fa-phone"></i> +33 6 12 34 56 78</li>
+                            <li><i class="fas fa-envelope"></i> dynovateai@gmail.com</li>
+                            <li><i class="fas fa-phone"></i> +33 6 64 66 45 06</li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -782,6 +453,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>

@@ -880,6 +880,20 @@ ul {
     background-color: #4c1d95;
 }
 
+.send-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.send-btn:hover {
+    background-color: #4c1d95;
+}
+
 /* Animations */
 @keyframes pulse {
     0% {

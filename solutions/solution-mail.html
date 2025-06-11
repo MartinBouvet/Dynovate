@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solution Réponse par Mail | Dynovate</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -96,44 +96,9 @@
         .email-tag {
             background-color: var(--accent-color);
             color: white;
-            padding: 5px 10px;
+            padding: 5px 10px;  
             border-radius: 15px;
             font-size: 0.8rem;
-        }
-        
-        .solutions-nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 80px;
-            gap: 20px;
-        }
-        
-        .solution-nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            border-radius: var(--border-radius);
-            background-color: white;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            width: 200px;
-            text-align: center;
-        }
-        
-        .solution-nav-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .solution-nav-item i {
-            font-size: 2rem;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-        }
-        
-        .solution-nav-item h4 {
-            font-size: 1rem;
-            margin-bottom: 5px;
         }
     </style>
 </head>
@@ -141,7 +106,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">
+            <a href="../index.html" class="logo">
                 <svg width="40" height="40" viewBox="0 0 100 100">
                     <circle cx="50" cy="50" r="40" fill="black"/>
                     <path d="M50,25 C53,30 56,32 59,38 C55,40 50,50 50,55 C50,60 45,40 41,38 C44,32 47,30 50,25" fill="white">
@@ -155,9 +120,9 @@
                 <span></span>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="../index.html">Accueil</a></li>
                 <li class="dropdown">
-                    <a href="solutions.html" class="active">Nos Solutions</a>
+                    <a href="../solutions.html" class="active">Nos Solutions</a>
                     <div class="dropdown-content">
                         <a href="solution-mail.html" class="active">Réponse par Mail</a>
                         <a href="solution-social.html">Réseaux Sociaux</a>
@@ -165,9 +130,9 @@
                         <a href="solution-chatbot.html">Chatbot Web</a>
                     </div>
                 </li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="contact.html" class="btn-primary">Démonstration</a></li>
+                <li><a href="../about.html">À propos</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="../contact.html" class="btn-primary">Démonstration</a></li>
             </ul>
         </div>
     </nav>
@@ -179,7 +144,7 @@
                 <h1 class="animated-title">Solution <span class="highlight">Réponse par Mail</span></h1>
                 <p class="hero-description">Optimisez la gestion de votre boîte de réception grâce à notre IA qui classe, priorise et répond automatiquement à vos emails.</p>
                 <div class="hero-buttons">
-                    <a href="contact.html" class="btn-primary">Demander une démo</a>
+                    <a href="../contact.html" class="btn-primary">Demander une démo</a>
                     <a href="#details" class="btn-secondary">En savoir plus</a>
                 </div>
             </div>
@@ -277,7 +242,7 @@
             <div class="cta-container">
                 <h2>Prêt à révolutionner votre gestion des emails ?</h2>
                 <p>Demandez une démonstration personnalisée de notre solution Réponse par Mail.</p>
-                <a href="contact.html" class="btn-primary">Demander une démo</a>
+                <a href="../contact.html" class="btn-primary">Demander une démo</a>
             </div>
         </div>
     </section>
@@ -299,10 +264,10 @@
                     <div class="footer-column">
                         <h4>Navigation</h4>
                         <ul>
-                            <li><a href="index.html">Accueil</a></li>
-                            <li><a href="solutions.html">Nos Solutions</a></li>
-                            <li><a href="about.html">À propos</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="../index.html">Accueil</a></li>
+                            <li><a href="../solutions.html">Nos Solutions</a></li>
+                            <li><a href="../about.html">À propos</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -318,8 +283,8 @@
                         <h4>Contact</h4>
                         <ul class="contact-info">
                             <li><i class="fas fa-map-marker-alt"></i> Marseille, France</li>
-                            <li><i class="fas fa-envelope"></i> contact@dynovate.com</li>
-                            <li><i class="fas fa-phone"></i> +33 6 12 34 56 78</li>
+                            <li><i class="fas fa-envelope"></i> dynovateai@gmail.com</li>
+                            <li><i class="fas fa-phone"></i> +33 6 64 66 45 06</li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -370,6 +335,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>
